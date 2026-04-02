@@ -1,24 +1,19 @@
-#environment
-most R codes is under R-3.6 unless it is mentioned in the script
+#environment most R codes is under R-3.6 unless it is mentioned in the script
 
+#data Raw ChIP-seq data (in BAM format), processed count matrices, genotype matrix, and metadata including sex, age, race, and ethnics are available at GEO under accession number GSE316497.
 
-#data
-Raw ChIP-seq data (in BAM format), processed count matrices, genotype matrix, and metadata including sex, age, race, and ethnics are available at GEO under accession number GSE316497.
-
-#overview of folders
-./deconv deconvolution: cell fraction estimation
-./eQTLvsGWAS: genetic evidence of candidate genes based eQTL-GWAS colocalization
-./haQTL: hQTL mapping
-./haQTLvseQTL: CRE-gene linking inferrence based on hQTL-eQTL MR, colocalization
-./haQTLvsGWAS: driver CREs inferrence based on haQTL-GWAS MR, colocalization
-./heritability: heritability enrichment based on LDSC
-./hiC.DiffPeakandDEGandTF: integrate Hi-C data to understand dCRE, infer genes with BD Epi-signatures, and drug repurposing
-./peakMergeNormal: data processing and differential signal mapping
-./peakVariationAcrossTiss: check CRE activity across tissues
-./PRS: generate Polygenetic risk scores
+#overview of folders 
+./deconv deconvolution: cell fraction estimation 
+./eQTLvsGWAS: genetic evidence of candidate genes based eQTL-GWAS colocalization 
+./haQTL: hQTL mapping 
+./haQTLvseQTL: CRE-gene linking inferrence based on hQTL-eQTL MR, colocalization 
+./haQTLvsGWAS: driver CREs inferrence based on haQTL-GWAS MR, colocalization 
+./heritability: heritability enrichment based on LDSC 
+./hiC.DiffPeakandDEGandTF: integrate Hi-C data to understand dCRE, infer genes with BD Epi-signatures, and drug repurposing 
+./peakMergeNormal: data processing and differential signal mapping 
+./peakVariationAcrossTiss: check CRE activity across tissues 
+./PRS: generate Polygenetic risk scores 
 ./sampleManifold: study patient heterogeneity
-
-
 
 #results generation based on figures
 
@@ -44,9 +39,9 @@ a.4.getAnnotationForModule_3actHM_onEpiMap.R =>#Fig 1b
 
 a.4.runTFMotifsEnrichForAREModlue_byHomer.sh
 a.4.getTFMotifsEnrichedForAREModule.byHomer_V1.1_EpiMapMotif.R
-a.4.2.visTFMotifsEnrichedInAREModule.byHomer_EpimapMotif.R => #Supp Fig 1c&d
+a.4.2.visTFMotifsEnrichedInAREModule.byHomer_EpimapMotif.R => #Supp Fig. 1c&d
 
-a.4.annotateModuleByrGREAT_3actMarks_Epimap.R => #Supp Fig 1e
+a.4.annotateModuleByrGREAT_3actMarks_Epimap.R => #Supp Fig. 1e
  
 
 
@@ -54,16 +49,16 @@ Fig 2 CRE differential signal#######################
 
 #presence between case and control #################
 ./peakMergeNormal
-b.cmpPeakPresenceInd.R #(Supp Fig 2)
+b.cmpPeakPresenceInd.R #(Supp Fig. 2)
 
 #cell fraction estimation###########################
 ./deconv
 #step a, signature peaks
 a.selectPeakAndSimulation_V1.7.2_colineariyAuto_rowNorm_6Celltypes.R 
 output folder: ./deconv/a_selectPeaksAndSimulation_V1.7.2_colinearAuto_rowNorm_6cellType
-#
+
 #step b, estimate cell fraction
-b.real.estFract_V1.4.4_nnPoisR_noIntercept_6CellType.R #(Supp Fig 3a)
+b.real.estFract_V1.4.4_nnPoisR_noIntercept_6CellType.R #(Supp Fig. 3a)
 
 output folder: ./deconv/b_real_estFract_V1.4.4.1_nnPoisR_noIntcpt_peakNorm_6cellType_autoSig 
 
@@ -75,7 +70,7 @@ d.annotateDiffPeak_byrGREAT_V1.4.1_sva_NoEHR.R (Fig.2a)
 d.getTFMotifsEnrichForDP_byHomer.sh
 d.getTFMotifsEnrichedForDP_V1.1_EpimapMotif.R (random bg)
 d.2.visTFMotifsEnrichedForDP_EpimapMotif.R
-d.cmpBulkDPacrossHMs_byLimma_V1.2_cmpNumber.R (Supp Fig.5a)
+d.cmpBulkDPacrossHMs_byLimma_V1.2_cmpNumber.R (Supp Fig. 5a)
 
 ##diagnose batch effect############################
 ./peakMergeNormal
@@ -83,20 +78,20 @@ d.cmpBulkDPacrossHMs_byLimma_V1.2_cmpNumber.R (Supp Fig.5a)
 c.getDiff_byLimma_V1.4.1.1_sva_NoEHR_batchPerm_paral.R
 c.getDiff_byLimma_V1.4.1.1_sva_NoEHR_batchPerm.R
 c.getDiff_byLimma_V1.4.1.1_sva_NoEHR_batchPerm_Summary.R
-#
+
 #b. compare the differential signal when comparing one sample to samples from the same group or from the different group
 c.getDiff_byLimma_V1.4.1.2_sva_NoEHR_cmpBatch_paral.R
 c.getDiff_byLimma_V1.4.1.2_sva_NoEHR_cmpBatch.R
 c.getDiff_byLimma_V1.4.1.2_sva_NoEHR_cmpBatch_Summary.R
 #c. PCA of residuals from differential analysis
-c.getDiff_byLimma_V1.4.1_sva_NoEHR.R (Supp Fig.4c)
+c.getDiff_byLimma_V1.4.1_sva_NoEHR.R (Supp Fig. 4c)
 
 
 #identify genes with BD epi-signatures###############
 ./hiC.DiffPeakandDEGandTF 
 a.geneBodyDP.meta_V1.2.1_allGenes.R
-a.2.cmpDPs.geneRegDomainAndGeneBody_V1.1_rmOvlp.R #(Supp Fig.5c&d)
-a.3.visDEG.metaDP_V1.2_5conds.R #(Fig.2c, Supp Fig.5e)
+a.2.cmpDPs.geneRegDomainAndGeneBody_V1.1_rmOvlp.R #(Supp Fig. 5c&d)
+a.3.visDEG.metaDP_V1.2_5conds.R #(Fig.2c, Supp Fig. 5e)
 
 
 Fig 3 genetics########################################
@@ -107,13 +102,13 @@ a.identifyCovariatesForhaQTL_V1.2.3_filtPeakByMedianCV_geneINT.Peer.R
 a.2.callTisshaQTL_V1.2.3_filtPeaksByMedianCV_gINT.Peer_rmSexAge.R
 a.3.visHaQTLNumVSCovNum.R
 a.4.callTisshaQTL_fixedCov_V1.2.3_dp.bg.R
-a.5.multipleTestOnQTL_forPeer_V1.1_cutoffs.R (Supp Fig.6c)
-b.gCRE.shared.upSet.R #(Fig.3a)
-b.Manhattan.plot.R (Supp Fig 6b)
+a.5.multipleTestOnQTL_forPeer_V1.1_cutoffs.R (Supp Fig. 6c)
+b.gCRE.shared.upSet.R #(Fig. 3a)
+b.Manhattan.plot.R (Supp Fig. 6b)
 
 #Peer vs covariates###################################
 ./haQTL
-a.2.testSampPeersWithCovariates.CellFract.R (Supp Fig.6a)
+a.2.testSampPeersWithCovariates.CellFract.R (Supp Fig. 6a)
 
 #compare with hQTL calling with top 5 genotype PCs####
 ./haQTL
@@ -123,9 +118,10 @@ c.comphQTL_amongDifferentVersions.R
 #sharing across HMs, across tissues and vs. hQTL-GWAS colocalization
 #based on Xiong, Nature Genetics, 2021, m6A genetics
 ./haQTL
-b.2.Comp.QTL.DirectionConsistEst.R (Supp Fig 6d)
-c.comp2haQTL_fromeGTEx_V1.1_sharedgARE.R
-#./haQTLvsGWAS/a.2.BDGWASColocgARE.vs.hQTLSharingWithBrain.R
+b.2.Comp.QTL.DirectionConsistEst.R (Supp Fig. 6d)
+c.comp2haQTL_fromeGTEx_V1.1_sharedgARE.R (Supp Fig. 6f)
+./haQTLvsGWAS/a.2.BDGWASColocgARE.vs.hQTLSharingWithBrain.R
+
 
 #hQTL vs GWAS ######################################### 
 ./haQTLvsGWAS
@@ -144,10 +140,7 @@ a.testBulkHaQTLVSGWAS_byColoc_V1.1_allGWAS_summary_byGWAS.loci.R
 a.prepAnnotForLDSC.gARE.R
 a.prepAnnotForLDSC.CREGrpAndbulkDP.R
 a2.LDSCpartitionHeritab_AREGrp.bulkDP.gCREs_slctGWAS.R
-a3.visLDSC_AREGrp.bulkDP.gARE_slctGWAS.R (Fig.3b, Supp Fig.6e)
-
-
-
+a3.visLDSC_AREGrp.bulkDP.gARE_slctGWAS.R (Fig.3b, Supp Fig. 6e)
 
 Fig 4 causal gene and tissue sharing###############
 
@@ -171,7 +164,7 @@ a.2.linkGenePeak_MR-Egger_V1.1.1_gARE_summary.R
 a.linkGenePeak_byFMeQTL_V1.1_gARE.R
 
 b.summaryLinks.coloc.MR.PRS_V1.3_gARE.R
-b.2.cmp.geneticLinks.vsHiC_V1.1_gARE.R (linkType="gene2Neighb") (Supp Fig.7c)
+b.2.cmp.geneticLinks.vsHiC_V1.1_gARE.R (linkType="gene2Neighb") (Supp Fig. 7c)
 
 
 #candidate genes #################################
@@ -211,9 +204,9 @@ Fig 5 individual heterogeneity and subtype #########
 
 #cluster and annotation ############################
 ./sampleManifold
-b.factorAnalysis.across5HMs.MOFA_HiC.DP_V1.2_pvalCutoff.R (Supp Fig.8b)
-b2.cmpMOFA.Factor.withEHR.R (Supp Fig.8c)
-b3.clusterPatientsBasedOnMOFA.factor.V1.1_allSamps.R (Fig.5a, Fig.5b, Supp Fig.8d)
+b.factorAnalysis.across5HMs.MOFA_HiC.DP_V1.2_pvalCutoff.R (Supp Fig. 8b)
+b2.cmpMOFA.Factor.withEHR.R (Supp Fig. 8c)
+b3.clusterPatientsBasedOnMOFA.factor.V1.1_allSamps.R (Fig.5a, Fig.5b, Supp Fig. 8d)
 c.cmpPatientClusterWithEHR_byMOFA_V1.1.2_addNumericFeature.R (Fig.5c)
 c.cmpAllSampClusterWithEHR_byMOFA_V1.1.2_addNumericFeature.R  #check EHR enrichment of all samples clustering 
 c.findMarkerDPforCluster_V1.2_uniq.R (Supp Fig.8e)
@@ -259,7 +252,7 @@ b2.visualizeEpiDEGvsCMap.R (Fig.6b)
 #vis signature genes across different perturbations#
 ./hiC.DiffPeakandDEGandTF/
 b3.extractSlctExpForSignatures.py
-b4.visualizeEpiDEGvsCMap.heatmap.R (Supp Fig.11a)
+b4.visualizeEpiDEGvsCMap.heatmap.R (Supp Fig. 11a)
 
 
 #subtype DP -> DEGs for each group of patients
@@ -277,4 +270,4 @@ b.testEpiDEGvsCMapSignatures_subGrpDP_V1.1.py
 #network visualization for 
 ./hiC.DiffPeakandDEGandTF/
 b2.visualizeEpiDEGvsCMap_subGrpDP_V1.2_cytoscape.R
-output dir: b_comp2CompoundSig_cMap_inflamSubGrps/a3_V1.2_subGrps/b2_vis_V1.2_cytoscape (Fig.6c, Supp Fig.11 b-e)
+output dir: b_comp2CompoundSig_cMap_inflamSubGrps/a3_V1.2_subGrps/b2_vis_V1.2_cytoscape (Fig.6c, Supp Fig. 11 b-e)
