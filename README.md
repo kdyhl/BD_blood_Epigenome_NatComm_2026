@@ -170,19 +170,23 @@ a.buildHiCRegionLink.bulk.R
 ### gLink scores
 ./haQTLvseQTL
 1) haQTL vs eQTL coloc
+
 a.2.colocalizeTest.haQTLVSeQTL.coloc_V1.3.gARE_para.R
 a.2.colocalizeTest.haQTLVSeQTL.coloc_V1.3.gARE_perGene.R
 a.2.colocalizeTest.haQTLVSeQTL.coloc_V1.3.gARE_summary.R
 
 2) haQTL vs eQTL MR
+
 a.2.linkGenePeak_MR-Egger_V1.1.1_gARE_para.R
 a.2.linkGenePeak_MR-Egger_V1.1.1_gARE_perGene.R
 a.2.linkGenePeak_MR-Egger_V1.1.1_gARE_summary.R
 
 3) FMeQTL linking
+
 a.linkGenePeak_byFMeQTL_V1.1_gARE.R
 
 4) summary
+
 b.summaryLinks.coloc.MR.PRS_V1.3_gARE.R
 b.2.cmp.geneticLinks.vsHiC_V1.1_gARE.R (linkType="gene2Neighb") (Supp Fig. 7c)
 
