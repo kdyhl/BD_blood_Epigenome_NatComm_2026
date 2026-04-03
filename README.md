@@ -10,28 +10,18 @@ Raw ChIP-seq data (in BAM format), processed count matrices, genotype matrix, an
 Other data including brain eQTL, hQTL mapped could be found at Zenodo  
 
 ---
-## overview of folders 
-./deconv deconvolution: cell fraction estimation 
-
-./eQTLvsGWAS: genetic evidence of candidate genes based eQTL-GWAS colocalization 
-
-./haQTL: hQTL mapping 
-
-./haQTLvseQTL: CRE-gene linking inferrence based on hQTL-eQTL MR, colocalization 
-
-./haQTLvsGWAS: driver CREs inferrence based on haQTL-GWAS MR, colocalization 
-
-./heritability: heritability enrichment based on LDSC 
-
-./hiC.DiffPeakandDEGandTF: integrate Hi-C data to understand dCRE, infer genes with BD Epi-signatures, and drug repurposing 
-
-./peakMergeNormal: data processing and differential signal mapping 
-
-./peakVariationAcrossTiss: check CRE activity across tissues 
-
-./PRS: generate Polygenetic risk scores 
-
-./sampleManifold: study patient heterogeneity
+## folders overview
+- `./deconv`: deconvolution — cell fraction estimation  
+- `./eQTLvsGWAS`: genetic evidence of candidate genes based on eQTL–GWAS colocalization  
+- `./haQTL`: hQTL mapping  
+- `./haQTLvseQTL`: CRE–gene linking inference based on hQTL–eQTL MR and colocalization  
+- `./haQTLvsGWAS`: driver CRE inference based on hQTL–GWAS MR and colocalization  
+- `./heritability`: heritability enrichment using LDSC  
+- `./hiC.DiffPeakandDEGandTF`: integrate Hi-C data to identify dCREs, infer BD epigenetic signatures, and perform drug repurposing  
+- `./peakMergeNormal`: data processing and differential signal mapping  
+- `./peakVariationAcrossTiss`: assess CRE activity across tissues  
+- `./PRS`: generate polygenic risk scores  
+- `./sampleManifold`: analyze patient heterogeneity 
 
 ---
 
