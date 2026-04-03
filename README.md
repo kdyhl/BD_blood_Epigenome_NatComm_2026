@@ -1,14 +1,16 @@
 
+# Scripts for blood epigenome in bipolar disorder published in Nature communications, 2026
 
-# environment 
+## environment 
 most R codes is under R-3.6 unless it is mentioned in the script
+
 ---
-# data 
+## data 
 Raw ChIP-seq data (in BAM format), processed count matrices, genotype matrix, and metadata including sex, age, race, and ethnics are available at GEO under accession number GSE316497.
 Other data including brain eQTL, hQTL mapped could be found at Zenodo  
 
 ---
-# overview of folders 
+## overview of folders 
 ./deconv deconvolution: cell fraction estimation 
 ./eQTLvsGWAS: genetic evidence of candidate genes based eQTL-GWAS colocalization 
 ./haQTL: hQTL mapping 
@@ -20,13 +22,14 @@ Other data including brain eQTL, hQTL mapped could be found at Zenodo
 ./peakVariationAcrossTiss: check CRE activity across tissues 
 ./PRS: generate Polygenetic risk scores 
 ./sampleManifold: study patient heterogeneity
+
 ---
 
-# results generation based on figures
+## results generation based on figures
 
-## Fig 1 CRE detection and annotation###################
+## Fig 1 CRE detection and annotation
 
-### CRE counts matrix and peak annotation###############
+### CRE counts matrix and peak annotation
 ./peakMergeNormal
 a.mergePeak2ReadsCounts_V4.2_filteredMergedPeak_H3K27ac.R
 a.mergePeak2ReadsCounts_V4.2_filteredMergedPeak.R
@@ -36,7 +39,7 @@ b.annotatePeak.byHomer.R => #Supp Fig.1a
 
 output folder: ./peakMergeNormal/a_2_peakHeightsNormalized_V1.4/ #all CREs detected
 
-### CRE activity across different tissues in EpiMap#####
+### CRE activity across different tissues in EpiMap
 ./peakVariationAcrossTiss/
 a.pairwiseOvlpPeaks.R
 a.mergePeaksAcross3actMarks.R
@@ -127,7 +130,6 @@ based on Xiong, Nature Genetics, 2021, m6A genetics
 b.2.Comp.QTL.DirectionConsistEst.R (Supp Fig. 6d)
 c.comp2haQTL_fromeGTEx_V1.1_sharedgARE.R (Supp Fig. 6f)
 ./haQTLvsGWAS/a.2.BDGWASColocgARE.vs.hQTLSharingWithBrain.R
-
 
 ### hQTL vs GWAS ######################################### 
 ./haQTLvsGWAS
@@ -254,12 +256,10 @@ b.testEpiDEGvsCMapSignatures_V1.1.py
 ./hiC.DiffPeakandDEGandTF/
 b2.visualizeEpiDEGvsCMap.R (Fig.6b)
 
-
 ### vis signature genes across different perturbations#
 ./hiC.DiffPeakandDEGandTF/
 b3.extractSlctExpForSignatures.py
 b4.visualizeEpiDEGvsCMap.heatmap.R (Supp Fig. 11a)
-
 
 ### subtype DP -> DEGs for each group of patients
 ./peakMergeNormal/c.getDiff_byLimma_V1.5.1_inflamSubgrps.R
