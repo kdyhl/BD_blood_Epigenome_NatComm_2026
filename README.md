@@ -22,6 +22,7 @@ Other data including brain eQTL, hQTL mapped could be found at Zenodo
 - `./peakVariationAcrossTiss`: assess CRE activity across tissues  
 - `./PRS`: generate polygenic risk scores  
 - `./sampleManifold`: analyze patient heterogeneity 
+- `./myUltil`: ancillary scripts
 
 ---
 
@@ -81,17 +82,17 @@ step b, estimate cell fraction
 
 ### diagnose batch effect
 ./peakMergeNormal
-step a. identifiy dCRE by permuting group labeles of batch
+1) identifiy dCRE by permuting group labeles of batch
 - c.getDiff_byLimma_V1.4.1.1_sva_NoEHR_batchPerm_paral.R
 - c.getDiff_byLimma_V1.4.1.1_sva_NoEHR_batchPerm.R
 - c.getDiff_byLimma_V1.4.1.1_sva_NoEHR_batchPerm_Summary.R
 
-step b. compare the differential signal when comparing one sample to samples from the same group or from the different group
+2) compare the differential signal when comparing one sample to samples from the same group or from the different group
 - c.getDiff_byLimma_V1.4.1.2_sva_NoEHR_cmpBatch_paral.R
 - c.getDiff_byLimma_V1.4.1.2_sva_NoEHR_cmpBatch.R
 - c.getDiff_byLimma_V1.4.1.2_sva_NoEHR_cmpBatch_Summary.R
 
-step c. PCA of residuals from differential analysis
+3) PCA of residuals from differential analysis
 - c.getDiff_byLimma_V1.4.1_sva_NoEHR.R (Supp Fig. 4c)
 
 
@@ -177,9 +178,7 @@ based on Xiong, Nature Genetics, 2021, m6A genetics
 - b.2.cmp.geneticLinks.vsHiC_V1.1_gARE.R (linkType="gene2Neighb") (Supp Fig. 7c)
 
 
-### candidate genes
-based on HiC links with TSS-asscoiated hiC regions, 
-both hQTL-GWAS coloc and differential signal for all histone marks
+### candidate genes,based on HiC links with TSS-asscoiated hiC regions, both hQTL-GWAS coloc and differential signal for all histone marks
 ./hiC.DiffPeakandDEGandTF
 gene Neigbhood and hic region annotation
 - a.gneighb.VisGWASANDBulkAnnot_v1.1_bulkLink.R
@@ -187,8 +186,7 @@ gene Neigbhood and hic region annotation
 DP enrichment at HiC block level: 
 - a.2.compDPs.hiCBlock.bulk.R (Supp Fig. 7a&b)
 
-### candidate genes: based on gLink, both hQTL-GWAS coloc, MR and 
-differential signal, for only H3K4me1, H3K27me3, and H3K27ac
+### candidate genes: based on gLink, both hQTL-GWAS coloc, MR and differential signal, for only H3K4me1, H3K27me3, and H3K27ac
 ./haQTLvseQTL
 - c.gneighb.VisGWASANDBulkAnnot_linkFromGenetics_V1.1_3HM.R
 
