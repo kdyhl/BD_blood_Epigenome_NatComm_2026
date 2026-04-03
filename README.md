@@ -1,5 +1,6 @@
 
 # Scripts for blood epigenome in bipolar disorder published in Nature communications, 2026
+archived in Zenodo (10.5281/zenodo.19405608)
 
 ## environment 
 most R codes is under R-3.6 unless it is mentioned in the script
