@@ -12,15 +12,25 @@ Other data including brain eQTL, hQTL mapped could be found at Zenodo
 ---
 ## overview of folders 
 ./deconv deconvolution: cell fraction estimation 
+
 ./eQTLvsGWAS: genetic evidence of candidate genes based eQTL-GWAS colocalization 
+
 ./haQTL: hQTL mapping 
+
 ./haQTLvseQTL: CRE-gene linking inferrence based on hQTL-eQTL MR, colocalization 
+
 ./haQTLvsGWAS: driver CREs inferrence based on haQTL-GWAS MR, colocalization 
+
 ./heritability: heritability enrichment based on LDSC 
+
 ./hiC.DiffPeakandDEGandTF: integrate Hi-C data to understand dCRE, infer genes with BD Epi-signatures, and drug repurposing 
+
 ./peakMergeNormal: data processing and differential signal mapping 
+
 ./peakVariationAcrossTiss: check CRE activity across tissues 
+
 ./PRS: generate Polygenetic risk scores 
+
 ./sampleManifold: study patient heterogeneity
 
 ---
@@ -54,7 +64,7 @@ a.4.2.visTFMotifsEnrichedInAREModule.byHomer_EpimapMotif.R => #Supp Fig. 1c&d
 a.4.annotateModuleByrGREAT_3actMarks_Epimap.R => #Supp Fig. 1e
 
 ---
-## Fig 2 CRE differential signal#######################
+## Fig 2 CRE differential signal
 
 ### presence between case and control
 ./peakMergeNormal
@@ -81,7 +91,7 @@ d.getTFMotifsEnrichedForDP_V1.1_EpimapMotif.R (random bg)
 d.2.visTFMotifsEnrichedForDP_EpimapMotif.R
 d.cmpBulkDPacrossHMs_byLimma_V1.2_cmpNumber.R (Supp Fig. 5a)
 
-### diagnose batch effect############################
+### diagnose batch effect
 ./peakMergeNormal
 #step a. identifiy dCRE by permuting group labeles of batch
 c.getDiff_byLimma_V1.4.1.1_sva_NoEHR_batchPerm_paral.R
@@ -96,14 +106,14 @@ c.getDiff_byLimma_V1.4.1.2_sva_NoEHR_cmpBatch_Summary.R
 c.getDiff_byLimma_V1.4.1_sva_NoEHR.R (Supp Fig. 4c)
 
 
-### identify genes with BD epi-signatures###############
+### identify genes with BD epi-signatures
 ./hiC.DiffPeakandDEGandTF 
 a.geneBodyDP.meta_V1.2.1_allGenes.R
 a.2.cmpDPs.geneRegDomainAndGeneBody_V1.1_rmOvlp.R #(Supp Fig. 5c&d)
 a.3.visDEG.metaDP_V1.2_5conds.R #(Fig.2c, Supp Fig. 5e)
 
 ---
-## Fig 3 genetics########################################
+## Fig 3 genetics
 
 ### QTL mapping 
 ./haQTL
@@ -115,11 +125,11 @@ a.5.multipleTestOnQTL_forPeer_V1.1_cutoffs.R (Supp Fig. 6c)
 b.gCRE.shared.upSet.R #(Fig. 3a)
 b.Manhattan.plot.R (Supp Fig. 6b)
 
-### Peer vs covariates###################################
+### Peer vs covariates
 ./haQTL
 a.2.testSampPeersWithCovariates.CellFract.R (Supp Fig. 6a)
 
-### compare with hQTL calling with top 5 genotype PCs####
+### compare with hQTL calling with top 5 genotype PCs
 ./haQTL
 a.4.callTisshaQTL_fixedCov_V1.2.3.1_dp.bg_genotypePC.R
 c.comphQTL_amongDifferentVersions.R
@@ -131,19 +141,19 @@ b.2.Comp.QTL.DirectionConsistEst.R (Supp Fig. 6d)
 c.comp2haQTL_fromeGTEx_V1.1_sharedgARE.R (Supp Fig. 6f)
 ./haQTLvsGWAS/a.2.BDGWASColocgARE.vs.hQTLSharingWithBrain.R
 
-### hQTL vs GWAS ######################################### 
+### hQTL vs GWAS
 ./haQTLvsGWAS
 a.testBulkHaQTLVSGWAS_byColoc_V1.1_allGWAS.R
 a.testBulkHaQTLVSGWAS_byColoc_V1.1_allGWAS_summary.R (Fig.3c)
 a.testBulkHaQTLVSGWAS_byMR_V1.1_allGWAS.R
 b.colocalizeTest.VSGWAS.Vis_perLocus.acrossHM.R (Fig.3d)
 
-### clump and summarize colocalization ###################
+### clump and summarize colocalization
 ./haQTLvsGWAS
 a.ClumpBDGWAS.R (Supp table 4)
 a.testBulkHaQTLVSGWAS_byColoc_V1.1_allGWAS_summary_byGWAS.loci.R
 
-### heritability ########################################
+### heritability
 ./heritability
 a.prepAnnotForLDSC.gARE.R
 a.prepAnnotForLDSC.CREGrpAndbulkDP.R
@@ -151,13 +161,13 @@ a2.LDSCpartitionHeritab_AREGrp.bulkDP.gCREs_slctGWAS.R
 a3.visLDSC_AREGrp.bulkDP.gARE_slctGWAS.R (Fig.3b, Supp Fig. 6e)
 
 ---
-## Fig 4 causal gene and tissue sharing###############
+## Fig 4 causal gene and tissue sharing
 
-### linking: hiC.reg and links#########################
+### linking: hiC.reg and links
 ./hiC.DiffPeakandDEGandTF 
 a.buildHiCRegionLink.bulk.R   
 
-### gLink scores#####################################
+### gLink scores
 ./haQTLvseQTL
 1) haQTL vs eQTL coloc
 a.2.colocalizeTest.haQTLVSeQTL.coloc_V1.3.gARE_para.R
@@ -222,7 +232,7 @@ c.cmpAllSampClusterWithEHR_byMOFA_V1.1.2_addNumericFeature.R  #check EHR enrichm
 c.findMarkerDPforCluster_V1.2_uniq.R (Supp Fig.8e)
 c.2.annotateMarkDP_byrGREAT.R
 
-### PRS: Clumping+Threshold############################
+### PRS: Clumping+Threshold
 ./PRS
 a.baseGWASSummary.QC.R
 b.genomicRegions.forDecouplePRS.R
@@ -230,7 +240,7 @@ b.targetMayoBD.V1.1.noSwap.QC.R
 c.PRS.byPlink_decoupleImmuneComp.R (ld0.4.clumpDis100kb.wind2kb)
 d.cmpPRS.MayoEHR_grps.R (LD 0.4, clumbDis 100kb, wind 2kb) (Supp Fig. 9a, c, d, Fig. 5d)
 
-### PRS: PRS-CS and compare with PRS-C+T###############
+### PRS: PRS-CS and compare with PRS-C+T
 ./PRS
 c.PRS.byPRS-CS.1.postEff.sh
 c.PRS.byPRS-CS.2.decoupleImmuneComp.R
